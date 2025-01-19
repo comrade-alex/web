@@ -1,0 +1,498 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    
+}
+
+
+
+
+p{
+    font-family: dosis;
+}
+
+body {
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.header {
+    display:flex;
+    flex-direction: row;
+    
+    align-self: stretch;
+    background-color: #121212;
+    justify-content:center;
+    align-items: center;
+    height: 85px;
+    padding: 5px 0;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 3;
+   
+
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 99%;
+    height:100%;
+    margin-top: 2px;
+    margin-bottom: 40px;
+    align-items: stretch;
+    background-color: #121212;
+    overflow: hidden;
+    z-index: -1;
+
+    
+
+
+}
+.flex-container {
+    display: flex;
+    justify-content: center; /* Espacio igual entre los elementos */
+    align-items: center; /* Alinear los elementos en el centro de la fila */
+    width:fit-content;
+    
+    margin: 10px;
+    margin-bottom: 50px;
+    
+    z-index: 1;
+ 
+}
+
+
+.flex-item {
+    display: flex;
+    position: relative;
+    flex-direction: column; /* Colocar la frase encima del SVG */
+    align-items: center; /* Centrar el contenido horizontalmente */
+    
+    
+    padding: 20px;
+    
+    width: fit-content;
+    text-align: center;
+    opacity: 0;
+    
+    
+}
+  
+    
+    
+    
+
+
+.flex-item.visible {
+
+    /* Aplica la animación cuando se añade la clase visible */
+    
+    animation: fadeInUp 1s ease-out forwards;
+   
+}
+
+
+.flex-item p {
+   
+    font-size: 25px;
+    color: #BA00E1;
+    margin-bottom: 10%;
+    
+   
+}
+
+.flex-item img {
+    width: 50%; /* Ajusta el tamaño del SVG según sea necesario */
+    height: 100%;
+    
+  
+  
+    
+}
+
+.colection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Espacio entre las tarjetas */
+    width: 100%;
+    
+    
+}
+
+.colection h1{
+    font-size: 150px;
+    font-weight: bold;
+    color: #BA00E1;
+    
+}
+
+.card-container {
+    display:flex;
+    margin-top: 100px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row; /* Layout horizontal */
+    align-items: stretch;
+
+    overflow: hidden;
+    width: 100%; /* Tamaño adaptable */
+    height: 400px; /* Altura uniforme para las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1B1B1B;
+    /* Animación inicial */
+    opacity: 0; /* Invisible inicialmente */
+    transform: translateX(-100px); /* Desplazado hacia la izquierda */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    z-index: 3;
+}
+
+.card.visible {
+    display: flex;
+    flex-direction: row; /* Layout horizontal */
+    align-items: stretch;
+    
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%; /* Tamaño adaptable */
+    height: 400px; /* Altura uniforme para las tarjetas */
+    background-color: #1B1B1B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Cuando es visible */
+    opacity: 1; /* Totalmente visible */
+    transform: translateX(0); /* En su posición final */
+}
+
+
+.card.description {
+    flex: 1; /* La descripción ocupa la mitad izquierda */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: none;
+    background-color: #121212;
+    box-sizing: border-box;
+    border: 1px solid #BA00E1;
+}
+
+.card h2 {
+    color: #BA00E1;
+}
+
+.card.image {
+    flex: 1; /* La imagen ocupa la mitad derecha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.card.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escala la imagen correctamente */
+}
+
+
+
+
+.footer {
+    background-color: #121212;
+    color: white;
+    padding: 20px 0;
+    border-top: 1px solid white;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer-content {
+    display: flex;
+    justify-content:center;
+    
+    
+    
+    
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    align-items: center; /* Centra el logo verticalmente */
+    height: fit-content;
+    width:fit-content;
+    padding-right:  300px; /* Opcional: un pequeño espacio desde el borde izquierdo */
+}
+
+.footer-logo img {
+    height: 240px; /* Mantén la proporción original */
+    width: auto;
+}
+
+
+
+
+.footer-section {
+    flex: 2 1 66.66%; /* Distribuye el resto del espacio */
+    min-width: 200px; /* Asegura que no se hagan demasiado pequeñas */
+    margin: 10px;
+}
+
+
+.footer-section-contact h2 {
+    font-size: 50px;
+    border-bottom: 1px solid white;
+    
+    
+}
+
+.footer-section p, .footer-section ul, .footer-section li {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #222;
+}
+
+
+
+.header .nav-link{
+   
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+}
+
+.header .yanselogo{
+    margin-right: auto;
+}
+.header .yanselogo img{
+    height: 80px;
+    width: auto;
+    padding-left: 20px;
+    transition: all 0.3s;
+   
+
+    
+}
+
+.header .nav-link li{
+    display: flex;
+    padding: 0 20px;
+
+
+}
+
+.header .nav-link li:hover{
+    transform: scale(1.1);
+    
+    
+}
+
+.header .nav-link li a:hover{
+    color: white;
+}
+
+.header .nav-link a{
+    font-weight: 700;
+    color: #BA00E1;
+    text-decoration: none;
+}
+
+.header .yanselogo img:hover{
+    transform: scale(1.2);
+}
+
+.banner {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background-color: #121212;
+    height: 75vh;
+    width: 100%;
+    
+    
+}
+
+.description{
+    margin-top: 0;
+    padding: 20 20 20 50;
+    height: fit-content;
+    text-align: center;
+    z-index: 1;
+    background-image: url('5W9A9779.JPG'); /* Cambia por la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra toda la sección */
+    background-attachment: fixed; /* Aquí se crea el efecto de paralaje */
+    background-position: center;
+    overflow: hidden;
+    margin-bottom: 40px;
+
+}
+.detailed-description {
+    /* Tamaño y posicionamiento del contenedor */
+    position: relative;
+    height: fit-content; /* Ajusta según el tamaño que necesites */
+    background-image: url('/static/images/UL5A6211.jpg'); /* Cambia por la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra toda la sección */
+    background-attachment: fixed; /* Aquí se crea el efecto de paralaje */
+    background-position: center;
+    overflow: hidden;
+    
+    margin: 0 0 0 0;
+    padding: 20px; /* Ajustar si se necesita más espacio global */
+    text-align: center;
+    z-index: 1;
+}
+
+.detailed-description h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Para que el texto sea más legible sobre la imagen */
+    
+}
+
+.detailed-description p {
+    font-size: 30px;
+    max-width: 800px;
+    justify-self: center;
+    align-self: center;
+    margin-top: 10px; /* Ajusta para acercarlo más al encabezado */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Mejorar la legibilidad del párrafo */
+    line-height: 1.6;
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+
+
+.description h1 {
+    
+    font-size: 50px;
+    font-weight: bold;
+    color:white;
+    padding-top: 10px;
+    padding-bottom:10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Para que el texto sea más legible sobre la imagen */
+}
+
+.description p {
+    font-size: 30px;
+    max-width: 800px;
+    align-self:center;
+    justify-self: center;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9); /* Mejorar la legibilidad del párrafo */
+    line-height: 1.6;
+    padding-top:30px;
+    padding-bottom: 30px;
+}
+
+
+
+.word {
+    display:flex;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    font-size: 6em;
+    font-weight: bold;
+    height:auto;
+    text-transform: uppercase;
+    color:transparent;
+    margin: 0 0;
+    padding: 0 0;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out forwards;
+    
+}
+
+.word:nth-child(1) {
+    background-image: url('leopard-two.png');
+    animation-delay: 0s;
+    
+    
+}
+
+.word:nth-child(2) {
+    background-image: url('zebra-pattern.png');
+    animation-delay: 0.5s;
+}
+
+.word:nth-child(3) {
+    background-image: url('palm-leaves.png');
+    animation-delay: 1s;
+}
+
+
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+       /* transform: scale(0); /* Empieza desplazado hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+        transform:scale(1); /* Llega a su posición original */
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Comienza desplazado hacia la izquierda */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Termina en su posición original */
+    }
+}
